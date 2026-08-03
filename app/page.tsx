@@ -16,6 +16,8 @@ const services = [
   ["08", "Абонементы", ["Абонемент"]],
 ] as const;
 
+const siteBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 function Brand({ compact = false }: { compact?: boolean }) {
   return <span className={compact ? "brand compact" : "brand"}><span>CULT</span><span>BODY</span></span>;
 }
@@ -56,7 +58,7 @@ export default function Home() {
     </section>
 
     <section className="editorial">
-      <div className="editorial-photo" data-reveal><span>CULT BODY / INSTAGRAM</span></div>
+      <div className="editorial-photo" data-reveal style={{ backgroundImage: `linear-gradient(rgba(40,29,20,.12),rgba(40,29,20,.12)),url('${siteBase}/images/cult-body-editorial.jpg')` }}><span>CULT BODY / INSTAGRAM</span></div>
       <div className="editorial-copy"><p className="eyebrow">Подход</p><h2>Точно.<br/>Деликатно.<br/><em>По делу.</em></h2><p>Без универсальных обещаний. Методика и интенсивность подбираются под задачу, исходное состояние и ограничения.</p></div>
     </section>
 
@@ -80,7 +82,7 @@ export default function Home() {
       <div className="section-meta"><span>05</span><span>Пространство</span></div>
       <div className="space-title" data-reveal><h2>Спокойная среда.<br/><em>Частный ритм.</em></h2><p>Октябрьский район<br/>1-й Вакуровский проезд, 1<br/>цокольный этаж</p></div>
       <div className="space-collage">
-        <figure className="space-main" data-reveal><img src="/images/cult-body-space.jpg" alt="Реальный интерьер студии Cult Body"/><figcaption>CULT BODY / САРАТОВ</figcaption></figure>
+        <figure className="space-main" data-reveal><img src={`${siteBase}/images/cult-body-space.jpg`} alt="Реальный интерьер студии Cult Body"/><figcaption>CULT BODY / САРАТОВ</figcaption></figure>
         <div className="space-stone" data-reveal><div className="mini-seal"><Brand compact /></div><span>NATURAL / TACTILE / QUIET</span></div>
         <a className="route" href="https://2gis.ru/saratov/firm/70000001094191405" target="_blank" rel="noreferrer">Построить маршрут в 2ГИС <span>↗</span></a>
       </div>
@@ -90,11 +92,11 @@ export default function Home() {
       <div className="section-meta"><span>06</span><span>Instagram / @cult__body</span></div>
       <div className="gallery-head" data-reveal><p className="eyebrow">Cult Body изнутри</p><h2>Реальные кадры.<br/><em>Реальная студия.</em></h2><a href="https://www.instagram.com/cult__body/" target="_blank" rel="noreferrer">Смотреть Instagram ↗</a></div>
       <div className="gallery-grid">
-        <figure className="gallery-a" data-reveal><img src="/images/cult-body-pause.jpg" alt="Момент отдыха в Cult Body"/><figcaption>PAUSE / CULT BODY</figcaption></figure>
-        <figure className="gallery-b" data-reveal><img src="/images/cult-body-ritual.jpg" alt="Тёплая деталь ухода Cult Body"/><figcaption>RITUAL / DETAIL</figcaption></figure>
-        <figure className="gallery-c" data-reveal><img src="/images/cult-body-facial.jpg" alt="Уходовая процедура для лица в Cult Body"/><figcaption>FACE / CARE</figcaption></figure>
-        <figure className="gallery-d" data-reveal><img src="/images/cult-body-gift.jpg" alt="Подарочные сертификаты Cult Body"/><figcaption>GIFT / CULT BODY</figcaption></figure>
-        <figure className="gallery-e" data-reveal><img src="/images/cult-body-interior-detail.jpg" alt="Деталь реального интерьера Cult Body"/><figcaption>SPACE / SARATOV</figcaption></figure>
+        <figure className="gallery-a" data-reveal><img src={`${siteBase}/images/cult-body-pause.jpg`} alt="Момент отдыха в Cult Body"/><figcaption>PAUSE / CULT BODY</figcaption></figure>
+        <figure className="gallery-b" data-reveal><img src={`${siteBase}/images/cult-body-ritual.jpg`} alt="Тёплая деталь ухода Cult Body"/><figcaption>RITUAL / DETAIL</figcaption></figure>
+        <figure className="gallery-c" data-reveal><img src={`${siteBase}/images/cult-body-facial.jpg`} alt="Уходовая процедура для лица в Cult Body"/><figcaption>FACE / CARE</figcaption></figure>
+        <figure className="gallery-d" data-reveal><img src={`${siteBase}/images/cult-body-gift.jpg`} alt="Подарочные сертификаты Cult Body"/><figcaption>GIFT / CULT BODY</figcaption></figure>
+        <figure className="gallery-e" data-reveal><img src={`${siteBase}/images/cult-body-interior-detail.jpg`} alt="Деталь реального интерьера Cult Body"/><figcaption>SPACE / SARATOV</figcaption></figure>
       </div>
     </section>
 
